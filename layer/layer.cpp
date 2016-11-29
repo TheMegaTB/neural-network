@@ -22,6 +22,11 @@ void Layer<T>::modify() {
     }
 }
 
+template<typename T>
+size_t Layer<T>::output_size() {
+    return this->neurons.size();
+}
+
 //template<typename T>
 //vector<T> Layer<T>::getOutputs() {
 //    vector<T> outputs;

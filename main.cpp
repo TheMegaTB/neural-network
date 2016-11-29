@@ -2,6 +2,7 @@
 
 #include "neuron/neuron.h"
 #include "layer/layer.h"
+#include "network/network.h"
 
 double testAF(double &in) {
     return 1.5;
@@ -17,19 +18,29 @@ int main() {
 
     ActivationFunction<double> af(AFType::Sigmoid);
 
-    Layer<double> l1(10, 2, af);
-    vector<double> out = l1.calculate({0.1, 0.5});
-    for (int i = 0; i < out.size(); ++i) {
-        cout << out[i] << endl;
+    Network<double> net(2);
+    net.add_layer(2, af);
+    net.add_layer(3, af);
+    vector<double> results = net.calculate({0.5, 0.5});
+    cout << "RES: ";
+    for (int i = 0; i < results.size(); ++i) {
+        cout << results[i] << " | ";
     }
+    cout << endl;
 
-    cout << "------------" << endl;
-
-    l1.modify();
-    vector<double> out2 = l1.calculate({0.1, 0.5});
-    for (int i = 0; i < out2.size(); ++i) {
-        cout << out2[i] << endl;
-    }
+//    Layer<double> l1(10, 2, af);
+//    vector<double> out = l1.calculate({0.1, 0.5});
+//    for (int i = 0; i < out.size(); ++i) {
+//        cout << out[i] << endl;
+//    }
+//
+//    cout << "------------" << endl;
+//
+//    l1.modify();
+//    vector<double> out2 = l1.calculate({0.1, 0.5});
+//    for (int i = 0; i < out2.size(); ++i) {
+//        cout << out2[i] << endl;
+//    }
 
 //    Neuron<double> n(af, 10);
 //
