@@ -2,7 +2,7 @@
 // Created by themegatb on 11/28/16.
 //
 
-#include <math.h>
+#include <cmath>
 #include <iostream>
 #include <typeinfo>
 
@@ -18,7 +18,6 @@ value sine(value& in) {
 }
 
 template<typename T>
-//ActivationFunction<T>::ActivationFunction(AFType aft, T (*_custom_function)(T&)) {
 ActivationFunction<T>::ActivationFunction(AFType aft, union Parameters * param) {
     if (!param) {
         this->parameters = {};
@@ -62,17 +61,23 @@ Neuron<T>::Neuron(ActivationFunction<T> activation_function, size_t input_length
 }
 
 template<typename T>
-void Neuron<T>::calculate(std::vector<T> inputs) {
+T Neuron<T>::calculate(std::vector<T> inputs) {
     T sum = 0.0;
 
     for (int i = 0; i < this->weights.size(); ++i) {
-        std::cout << weights[i] << std::endl;
         sum += inputs[i] * weights[i];
     }
 
-    std::cout << sum << std::endl;
-
     this->value = this->af.run(sum);
+
+    return this->value;
+}
+
+template<typename T>
+void Neuron<T>::modify() {
+    for (int i = 0; i < weights.size(); ++i) {
+        this->weights[i] += rand_double() * 0.5 - 0.25;
+    }
 }
 
 

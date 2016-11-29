@@ -42,9 +42,12 @@ class Neuron {
     ActivationFunction<T> af;
     std::vector<T> weights;
 public:
-    Neuron(ActivationFunction<T>, size_t);
+    Neuron(ActivationFunction<T>, std::size_t input_length);
+
     double value;
-    void calculate(std::vector<T> inputs);
+
+    T calculate(std::vector<T> inputs);
+    void modify();
 };
 
 #endif //NEURALNETWORK_NEURON_H
