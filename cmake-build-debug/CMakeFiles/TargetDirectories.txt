@@ -1,0 +1,3 @@
+/home/themegatb/ClionProjects/neural-network/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/themegatb/ClionProjects/neural-network/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/themegatb/ClionProjects/neural-network/cmake-build-debug/CMakeFiles/NeuralNetwork.dir

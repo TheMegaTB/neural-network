@@ -5,7 +5,7 @@
 #ifndef NEURALNETWORK_HELPERS_H
 #define NEURALNETWORK_HELPERS_H
 
-#include <stdlib.h>
+#include <cstdlib>
 
 double rand_double() {
     return (double)rand() / (double)RAND_MAX;

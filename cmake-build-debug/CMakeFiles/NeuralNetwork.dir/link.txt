@@ -1,0 +1,1 @@
+/usr/bin/c++    -std=c++11 -g   CMakeFiles/NeuralNetwork.dir/main.cpp.o CMakeFiles/NeuralNetwork.dir/neuron/neuron.cpp.o CMakeFiles/NeuralNetwork.dir/layer/layer.cpp.o CMakeFiles/NeuralNetwork.dir/network/network.cpp.o CMakeFiles/NeuralNetwork.dir/trainer/trainer.cpp.o  -o NeuralNetwork 
